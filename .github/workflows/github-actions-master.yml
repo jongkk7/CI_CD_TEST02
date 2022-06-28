@@ -1,9 +1,11 @@
 name: "Master branch : CI & CD"
 on:
   workflow_dispatch:
-    push:
-      branches:
-        - master
+  pull_request:
+  push:
+    branches:
+      - master
+
 
 jobs:
   Explore-GitHub-Actions:
