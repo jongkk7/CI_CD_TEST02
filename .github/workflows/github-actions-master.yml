@@ -11,8 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: info
-        run: echo "info ---------"
-          echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event.",
+        run: echo "info ---------"<br>
+          echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event.\n"
           echo "${{ github.repository }} > ${{ github.ref }}."
 #      - run: echo "${{ github.repository }} > ${{ github.ref }}."
 #      - name: Check out repository code
