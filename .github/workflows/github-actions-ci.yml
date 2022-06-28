@@ -24,6 +24,11 @@ jobs:
         run: ./gradlew build
       - name: Done..
         run: echo "실행 종료 ( ${{ job.status }} )"
+  apk:
+    name: apk
+    runs-on: ubuntu-latest
+    steps:
+      run: echo "build 다음에 실행되는것 확인중"
 
 
 
