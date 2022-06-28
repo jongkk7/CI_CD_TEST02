@@ -53,7 +53,7 @@ jobs:
       - name: upload APK
         uses: actions/upload-artifact@v1
         with:
-          name: app_debug
+          name: app_
           path: app/outputs/debug
 
 
