@@ -28,7 +28,7 @@ jobs:
     name: apk
     runs-on: ubuntu-latest
     steps:
-      run: echo "build 다음에 실행되는것 확인중"
+      - run: echo "build 다음에 실행되는것 확인중"
 
 
 
