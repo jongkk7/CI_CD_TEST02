@@ -1,19 +1,17 @@
-name: "Master branch : CI & CD"
+name: "branch manager"
 
-# 트리거 종류 ( 해당 트리거가 발생할때 아래의 워크플로우가 실행됨 )
+# brach 생성 & 수정 & 삭제 관리
 on:
   workflow_dispatch:    # Github Action에서 수동으로 워크플로우 실행 가능
-#  push:                 # push 이벤트 발생 시
-#    branches:
-#      - master
-
+#  branch_protection_rule:
+#    types: [created, deleted, edited]
 
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
       # 작업 정보
-      - name: info
+      - name: branch info
         run: |
           echo "🎉 ${{ github.event_name }} event."
           echo "${{ github.repository }} > ${{ github.ref }}."
@@ -26,3 +24,4 @@ jobs:
       # 작업 종료
       - name: Done.
         run: echo "작업 상태 {:} ${{ job.status }}."
+

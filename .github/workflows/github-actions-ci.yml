@@ -1,0 +1,25 @@
+name: "CI"
+
+# CI ( 지속적 통합 )
+on:
+  workflow_dispatch:    # Github Action에서 수동으로 워크플로우 실행 가능
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    name: Build Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v1
+      - name: Setup JDK..
+        uses: actions/setup-java@v1
+        with:
+          java-version: 1.8
+      - name: Build..
+        run: ./gradlew build
+      - name: Done..
+        run: echo "실행 종료 ( ${{ job.status }} )"
+
+
+
