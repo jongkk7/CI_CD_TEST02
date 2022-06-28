@@ -12,8 +12,14 @@ jobs:
     steps:
       - name: info
         run: |
-          echo "info ---------"
-          echo "🎉 ${{ github.event_name }} event.\n"
+          echo "🎉 ${{ github.event_name }} event."
           echo "${{ github.repository }} > ${{ github.ref }}."
 
-      - run: echo "🍏 status - ${{ job.status }}."
+
+
+
+
+
+      # complete.
+      - name: Done.
+#        run: echo "🍏 status - ${{ job.status }}."
