@@ -2,7 +2,7 @@ name: "Master branch : CI & CD"
 
 # 트리거 종류 ( 해당 트리거가 발생할때 아래의 워크플로우가 실행됨 )
 on:
-  workflow_dispatch:    # Github Action에서 수동으로 워크플로우 실행 가능
+#  workflow_dispatch:    # Github Action에서 수동으로 워크플로우 실행 가능
 #  push:                 # push 이벤트 발생 시
 #    branches:
 #      - master
