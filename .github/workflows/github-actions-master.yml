@@ -1,0 +1,17 @@
+name: "Master branch : CI & CD"
+on:
+  workflow_dispatch:
+    push:
+      branches:
+        - master
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
+      - run: echo "${{ github.repository } > ${{ github.ref }} }."
+      - name: Check out repository code
+        uses: actions/checkout@v3
+
+      - run: echo "🍏 status - ${{ job.status }}."
