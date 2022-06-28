@@ -11,10 +11,12 @@ jobs:
     name: 작업 정보
     runs-on: ubuntu-latest
     steps:
-        - name: info
+        - name: 작업 정보
           run: |
-            echo "${{ github.repository }} > ${{ github.ref }}."
-            echo "🎉 ${{ github.event_name }} event."
+            echo "🎉🎉🎉🎉🎉🎉🎉"
+            echo "repo : ${{ github.repository }}"
+            echo "branch : ${{ github.ref }}"
+            echo "event : << ${{ github.event_name }} >>"
 
 #  build:
 #    name: Build Test
@@ -52,7 +54,7 @@ jobs:
         uses: actions/upload-artifact@v1
         with:
           name: app_
-          path: app/build/outputs/apk/debug
+          path: app/outputs/debug
 
 
 
