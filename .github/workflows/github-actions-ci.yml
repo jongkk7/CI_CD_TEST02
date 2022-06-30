@@ -56,13 +56,13 @@ jobs:
           path: app/build/reports/detekt
 
         # checkstyle
-      - name: check style...
-        run: ./gradlew checkstyle
-      - name: upload checkstyle result
-        uses: actions/upload-artifact@v1
-        with:
-          name: checkstyle_result
-          path: app/build/reports/checkstyle
+#      - name: check style...
+#        run: ./gradlew checkstyle
+#      - name: upload checkstyle result
+#        uses: actions/upload-artifact@v1
+#        with:
+#          name: checkstyle_result
+#          path: app/build/reports/checkstyle
 
         # 유닛테스트
 #      - name: Run Unit Tests
