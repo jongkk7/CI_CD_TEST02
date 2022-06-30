@@ -13,6 +13,33 @@ buildscript {
     }
 }
 
+plugins{
+    id("io.gitlab.arturbosch.detekt").version("1.20.0-RC1").apply(false)
+}
+
+allprojects {
+    apply {
+        plugin("io.gitlab.arturbosch.detekt")
+    }
+
+    detekt {
+        parallel = true
+        allRules = true
+        ignoreFailures = true
+        debug = true
+        config.setFrom(files("$rootDir/config/detekt/detekt-config.yml"))
+    }
+
+    tasks.named("detekt").configure {
+        reports {
+            html.required.set(true)
+            sarif.required.set(false)
+            xml.required.set(false)
+            txt.required.set(false)
+        }
+    }
+}
+
 task clean(type: Delete) {
     delete rootProject.buildDir
 }

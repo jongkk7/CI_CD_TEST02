@@ -1,0 +1,94 @@
+#####################################################################
+# 2022.06.29 YJK 제작
+#
+# default detekt
+# -> https://github.com/detekt/detekt/blob/main/detekt-core/src/main/resources/default-detekt-config.yml
+#
+# 정규식 패턴 검사 사이트
+# -> https://regexr.com/
+#####################################################################
+
+#build:
+#  maxIssues: 0 # 이슈가 최대갯수를 넘어갈 경우 빌드가 취소하고 에러처리됨
+#  weights:
+#   complexity: 2
+##   LongParameterList: 1
+#   style: 1
+#   comments: 1
+
+#config:
+#  validation: true
+#  warningsAsErrors: true # 에러에 경고도 포함 여부
+
+#console-reports:
+#  active: true
+#  exclude:
+#    - 'ProjectStatisticsReport'
+#    - 'ComplexityReport'
+#    - 'NotificationReport'
+#    - 'FindingsReport'
+#    - 'FileBasedFindingsReport'
+#  - 'LiteFindingsReport'
+
+##############################
+# 주석 체크
+##############################
+comments:
+  EndOfSentenceFormat: # 주석 형식 굳이 필요없을듯
+    active: false
+    endOfSentenceFormat: '[*]'
+  UndocumentedPublicClass: # 주석은 클래스에서만 체크
+    active: false
+    excludes: [ '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**' ]
+    searchInNestedClass: true
+    searchInInnerClass: false
+    searchInInnerObject: false
+    searchInInnerInterface: false
+  UndocumentedPublicFunction: # 메소드 주석 체크할 경우 인터페이스 안의 모든 함수에도 주석달아주어야함..
+    active: false
+    excludes: [ '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**' ]
+
+#############################
+# 복잡도 체크
+#############################
+complexity:
+  active: true
+  LargeClass: # 클래스 최대 라인
+    active: true
+    threshold: 600
+  LongMethod: # 함수 최대 라인
+    active: true
+    threshold: 60
+  TooManyFunctions:
+    active: true
+    excludes: [ '**/test/**', '**/androidTest/**', '**/commonTest/**', '**/jvmTest/**', '**/jsTest/**', '**/iosTest/**' ]
+    thresholdInFiles: 20
+    thresholdInClasses: 15
+    thresholdInInterfaces: 10
+    thresholdInObjects: 10
+    thresholdInEnums: 10
+    ignoreDeprecated: false
+    ignorePrivate: false
+    ignoreOverridden: false
+
+#formatting:
+#  active: true
+
+##############################
+### 코딩 스타일
+##############################
+style:
+  active: true
+  NewLineAtEndOfFile: # 마지막에 줄넘김 유무 ( default : true )
+    active: false
+    excludes: [ '**/test/**', '**/androidTest/**' ]
+
+##############################
+### 네이밍 스타일
+##############################
+naming:
+  active: true
+  PackageNaming: # package 패턴에 '_' 사용 가능하도록 수정
+    active: true
+    packagePattern: '[a-z]+(\.((_)?[a-z][_A-Za-z0-9]*))*'
+    excludes: [ '**/test/**', '**/androidTest/**' ]
