@@ -6,7 +6,7 @@ import android.os.Bundle
 /**
  * ! CI & CD Main class
  *
- * 메인 클래스 !!!
+ * 메인 클래스 !!!!!!
  */
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
