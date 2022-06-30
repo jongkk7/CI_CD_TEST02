@@ -52,7 +52,7 @@ jobs:
       - name: Run... (debug)
         with:
           cache: gradle
-        run: bash ./gradlew assembleDebug --stacktrace
+          run: bash ./gradlew assembleDebug --stacktrace
 
         # lint ( datekt 로 대체 )
 #      - name: Check lint
