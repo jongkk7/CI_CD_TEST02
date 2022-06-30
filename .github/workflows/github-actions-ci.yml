@@ -1,22 +1,21 @@
-name: "CI"
+name: "CI&CD"
 
-# CI ( 지속적 통합 )
 on:
 #  workflow_dispatch:    # Github Action에서 수동으로 워크플로우 실행 가능
   push:
     branches: [ master ]
 
 jobs:
-#  info:
-#    name: 작업 정보
-#    runs-on: ubuntu-latest
-#    steps:
-#        - name: 작업 정보
-#          run: |
-#            echo "🎉🎉🎉🎉🎉🎉🎉"
-#            echo "repo : ${{ github.repository }}"
-#            echo "branch : ${{ github.ref }}"
-#            echo "event : << ${{ github.event_name }} >>"
+  info:
+    name: 작업 정보
+    runs-on: ubuntu-latest
+    steps:
+        - name: 작업 정보
+          run: |
+            echo "🎉🎉🎉🎉🎉🎉🎉"
+            echo "repo : ${{ github.repository }}"
+            echo "branch : ${{ github.ref }}"
+            echo "event : << ${{ github.event_name }} >>"
   build:
     runs-on: ubuntu-latest
     steps:
@@ -56,13 +55,13 @@ jobs:
 #        run: ./gradlew lint
 
         # detekt ( 정적 분석기 )
-      - name: detekt...
-        run: ./gradlew detekt
-      - name: upload detekt result
-        uses: actions/upload-artifact@v1
-        with:
-          name: detekt_result
-          path: app/build/reports/detekt
+#      - name: detekt...
+#        run: ./gradlew detekt
+#      - name: upload detekt result
+#        uses: actions/upload-artifact@v1
+#        with:
+#          name: detekt_result
+#          path: app/build/reports/detekt
 
         # checkstyle
 #      - name: check style...
